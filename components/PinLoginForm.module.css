@@ -1,0 +1,20 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.submitButton {
+  margin-top: var(--spacing-4);
+  width: 100%;
+}
+
+.serverError {
+  color: var(--error);
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: var(--spacing-2);
+  background-color: color-mix(in srgb, var(--error) 10%, transparent);
+  padding: var(--spacing-2);
+  border-radius: var(--radius-sm);
+}

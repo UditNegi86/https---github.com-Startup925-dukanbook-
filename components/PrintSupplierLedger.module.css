@@ -1,0 +1,226 @@
+.container {
+  display: none; /* Hidden by default, only visible for printing */
+  font-family: var(--font-family-base);
+  color: #000;
+  background-color: #fff;
+  padding: var(--spacing-12);
+  width: 210mm; /* A4 width */
+  min-height: 297mm; /* A4 height */
+  box-sizing: border-box;
+}
+
+@media print {
+  .container {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    padding: var(--spacing-8);
+    margin: 0;
+    page-break-after: auto;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-8);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: var(--spacing-4);
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.companyDetails {
+  text-align: right;
+  font-size: 0.875rem;
+}
+
+.companyName {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.companyDetails p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: var(--spacing-3);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--spacing-2);
+}
+
+.supplierInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #f9f9f9;
+  padding: var(--spacing-4);
+  border-radius: var(--radius);
+  margin-bottom: var(--spacing-8);
+}
+
+.supplierInfo p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.summary {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-8);
+  font-size: 0.9rem;
+}
+
+.summaryItem strong {
+  font-weight: 700;
+}
+
+.transactions {
+  margin-bottom: var(--spacing-8);
+}
+
+.purchaseCard {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: var(--spacing-4);
+  page-break-inside: avoid;
+}
+
+.purchaseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-3);
+  background-color: #f9f9f9;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.purchaseTotal {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.dueDate {
+  color: #666;
+  font-weight: normal;
+}
+
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.itemsTable th,
+.itemsTable td {
+  padding: var(--spacing-2) var(--spacing-3);
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.itemsTable tbody tr:last-child td {
+  border-bottom: 1px solid #ddd;
+}
+
+.itemsTable th {
+  background-color: #fff;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+.itemsTable td:nth-child(2),
+.itemsTable th:nth-child(2),
+.itemsTable td:nth-child(3),
+.itemsTable th:nth-child(3),
+.itemsTable td:nth-child(4),
+.itemsTable th:nth-child(4) {
+  text-align: right;
+}
+
+.itemsTable tfoot tr:first-child td {
+  border-top: 2px solid #999;
+  padding-top: var(--spacing-3);
+}
+
+.itemsTable tfoot td {
+  padding-top: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
+  border-bottom: none;
+}
+
+.totalLabel {
+  text-align: right;
+  color: #555;
+  font-size: 0.875rem;
+}
+
+.totalValue {
+  text-align: right;
+  font-weight: 500;
+}
+
+.totalRow td {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding-top: var(--spacing-3) !important;
+  padding-bottom: var(--spacing-3) !important;
+  border-top: 2px solid #999 !important;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-4);
+  border-top: 2px solid var(--border);
+}
+
+.grandTotal {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-12);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: var(--spacing-3);
+  background-color: #f0f0f0;
+  border-radius: var(--radius-sm);
+}
+
+.printFooter {
+  position: absolute;
+  bottom: var(--spacing-8);
+  left: var(--spacing-8);
+  right: var(--spacing-8);
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+}

@@ -1,0 +1,283 @@
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.table th {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--background);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.supplierRow:hover {
+  background-color: var(--muted);
+}
+
+.supplierInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.supplierName {
+  font-weight: 500;
+  color: var(--surface-foreground);
+}
+
+.supplierContact {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.totalAmount {
+  font-weight: 500;
+  font-family: var(--font-family-monospace);
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+.rightAlign {
+  text-align: right;
+}
+
+.actionsColumn {
+  text-align: right;
+  width: 1%;
+}
+
+.expandColumn {
+  width: 1%;
+  padding-right: 0 !important;
+}
+
+.expandButton {
+  transition: transform var(--animation-duration-fast) ease;
+}
+
+.expandButton.expanded {
+  transform: rotate(180deg);
+}
+
+.emptyState {
+  padding: var(--spacing-12) var(--spacing-6);
+  text-align: center;
+  color: var(--muted-foreground);
+}
+
+.emptyState h3 {
+  margin: 0 0 var(--spacing-2);
+  font-size: 1.25rem;
+  color: var(--foreground);
+}
+
+.emptyState p {
+  margin: 0;
+}
+
+/* Expanded row styles */
+.expandedRow {
+  background-color: var(--background);
+}
+
+.expandedRow:hover {
+  background-color: var(--background);
+}
+
+.expandedRow td {
+  padding: 0 !important;
+  border-bottom: 1px solid var(--border);
+}
+
+.purchasesBreakdown {
+  padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.purchaseCard {
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.purchaseHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.purchaseDetail {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.purchaseDetailAmount {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-weight: 500;
+  color: var(--surface-foreground);
+  margin-left: auto;
+  font-family: var(--font-family-monospace);
+}
+
+.itemsTableContainer {
+  padding: var(--spacing-4);
+}
+
+.paymentDetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+}
+
+.paymentDetailsGrid div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.paymentDetailsGrid strong {
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+.paymentDetailsGrid span {
+  color: var(--surface-foreground);
+}
+
+.itemsTable {
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+.itemsTable th,
+.itemsTable td {
+  padding: var(--spacing-2) var(--spacing-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.itemsTable th {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: transparent;
+}
+
+.itemsTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.itemsTable tfoot tr:first-child td {
+  border-top: 2px solid var(--border);
+  padding-top: var(--spacing-3);
+}
+
+.totalRow td {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding-top: var(--spacing-3) !important;
+  padding-bottom: var(--spacing-3) !important;
+  border-top: 2px solid var(--border) !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .table {
+    display: block;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody,
+  .table tr {
+    display: block;
+  }
+
+  .supplierRow {
+    margin-bottom: var(--spacing-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background-color: var(--card);
+    box-shadow: var(--shadow);
+    padding: var(--spacing-3);
+  }
+
+  .table td {
+    display: block;
+    padding: var(--spacing-2) var(--spacing-3);
+    border-bottom: none;
+    text-align: left !important;
+    white-space: normal;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--muted-foreground);
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-1);
+  }
+
+  .expandColumn,
+  .actionsColumn {
+    width: auto;
+  }
+
+  .expandColumn::before,
+  .actionsColumn::before {
+    display: none;
+  }
+
+  .purchaseHeader {
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+  }
+
+  .purchaseDetailAmount {
+    margin-left: 0;
+    width: 100%;
+    order: 1;
+  }
+}

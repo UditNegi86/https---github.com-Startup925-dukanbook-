@@ -1,0 +1,158 @@
+.totalSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-6);
+  padding: var(--spacing-4);
+  background-color: color-mix(in srgb, var(--primary) 8%, transparent);
+  border-radius: var(--radius);
+  border: 2px solid color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+.calculationsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.calculationRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.calculationLabel {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.calculationValue {
+  font-family: var(--font-family-monospace);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.inputWithLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.inlineFormItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-bottom: 0;
+}
+
+.inlineLabel {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.percentInput {
+  width: 6rem;
+  height: 2rem;
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: 0.875rem;
+}
+
+.totalDivider {
+  height: 1px;
+  background-color: color-mix(in srgb, var(--primary) 30%, transparent);
+  margin: var(--spacing-2) 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.totalLabel {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.totalAmount {
+  font-family: var(--font-family-monospace);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.paymentSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  min-width: 12rem;
+}
+
+.paymentTypeField {
+  margin-bottom: 0;
+}
+
+.expectedPaymentDateField {
+  margin-bottom: 0;
+}
+
+.dateButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 400;
+  color: var(--foreground);
+}
+
+.dateButton > span {
+  color: var(--muted-foreground);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .totalSection {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-4);
+  }
+
+  .calculationsContainer {
+    width: 100%;
+  }
+
+  .calculationRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+  }
+
+  .inputWithLabel {
+    width: 100%;
+  }
+
+  .inlineFormItem {
+    width: 100%;
+  }
+
+  .percentInput {
+    flex: 1;
+  }
+
+  .totalRow {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .paymentSection {
+    min-width: 100%;
+  }
+}

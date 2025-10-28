@@ -1,0 +1,188 @@
+.container {
+  display: none; /* Hidden by default, only visible for printing */
+  font-family: var(--font-family-base);
+  color: #000;
+  background-color: #fff;
+  padding: var(--spacing-12);
+  width: 210mm; /* A4 width */
+  min-height: 297mm; /* A4 height */
+  box-sizing: border-box;
+}
+
+@media print {
+  .container {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    padding: var(--spacing-8);
+    margin: 0;
+    page-break-after: auto;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-12);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: var(--spacing-4);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.companyDetails {
+  text-align: right;
+  font-size: 0.875rem;
+}
+
+.companyName {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.companyDetails p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.metaInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-8);
+}
+
+.sectionTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: var(--spacing-2);
+  text-transform: uppercase;
+}
+
+.customerInfo p,
+.estimateDetails p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.estimateDetails {
+  text-align: right;
+}
+
+.itemsSection {
+  margin-bottom: var(--spacing-8);
+}
+
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.itemsTable th,
+.itemsTable td {
+  padding: var(--spacing-3);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.itemsTable th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.itemsTable td:nth-child(2),
+.itemsTable th:nth-child(2) {
+  text-align: center;
+}
+
+.itemsTable td:nth-child(3),
+.itemsTable th:nth-child(3),
+.itemsTable td:nth-child(4),
+.itemsTable th:nth-child(4) {
+  text-align: right;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-4);
+  border-top: 2px solid var(--border);
+}
+
+.notesAndPayment {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.notes p,
+.paymentType p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.expectedPaymentDate {
+  margin-top: var(--spacing-2);
+  font-size: 0.875rem;
+}
+
+.totalSection {
+  flex: 1;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  min-width: 300px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  padding: var(--spacing-2) var(--spacing-3);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.discountRow {
+  color: #666;
+}
+
+.taxRow {
+  color: #666;
+}
+
+.grandTotal {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: var(--spacing-3);
+  background-color: #f0f0f0;
+  border-radius: var(--radius-sm);
+  border-bottom: none;
+  margin-top: var(--spacing-2);
+}
+
+.printFooter {
+  position: absolute;
+  bottom: var(--spacing-8);
+  left: var(--spacing-8);
+  right: var(--spacing-8);
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+}

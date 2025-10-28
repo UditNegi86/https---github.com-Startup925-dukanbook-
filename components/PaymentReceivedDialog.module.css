@@ -1,0 +1,110 @@
+.dialogContent {
+  max-width: 32rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.paymentHistory {
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+.paymentHistoryTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0 0 var(--spacing-3) 0;
+}
+
+.paymentHistoryList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+}
+
+.paymentHistoryItem {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--spacing-3);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  padding: var(--spacing-2);
+  background-color: var(--card);
+  border-radius: var(--radius-sm);
+}
+
+.paymentDate {
+  font-weight: 500;
+}
+
+.paymentMode {
+  text-transform: capitalize;
+}
+
+.paymentAmount {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.paymentSummary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  padding-top: var(--spacing-3);
+  border-top: 1px solid var(--border);
+}
+
+.paymentSummaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--foreground);
+}
+
+.totalPaid {
+  font-weight: 600;
+}
+
+.remainingBalance {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-6);
+}
+
+.dateButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 400;
+  color: var(--foreground);
+}
+
+.dateButton > span {
+  color: var(--muted-foreground);
+}
+
+.helperText {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-top: var(--spacing-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.mutationError {
+  color: var(--error);
+  font-size: 0.875rem;
+  text-align: right;
+  margin-top: var(--spacing-2);
+}

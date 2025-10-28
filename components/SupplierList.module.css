@@ -1,0 +1,146 @@
+.tableContainer {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.table th {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: var(--muted);
+}
+
+.addressCell {
+  white-space: normal;
+  min-width: 200px;
+}
+
+.actionsColumn {
+  text-align: right;
+  width: 1%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-1);
+}
+
+.deleteButton {
+  color: var(--error);
+}
+
+.deleteButton:hover {
+  background-color: color-mix(in srgb, var(--error) 10%, transparent);
+}
+
+.emptyState {
+  padding: var(--spacing-12) var(--spacing-6);
+  text-align: center;
+  color: var(--muted-foreground);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--surface);
+}
+
+.emptyIcon {
+  margin-bottom: var(--spacing-4);
+  color: var(--muted-foreground);
+}
+
+.emptyTitle {
+  margin: 0 0 var(--spacing-2);
+  font-size: 1.25rem;
+  color: var(--foreground);
+}
+
+.emptyText {
+  margin: 0;
+}
+
+/* Responsive - Card layout on mobile */
+@media (max-width: 767px) {
+  .tableContainer {
+    overflow-x: visible;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: var(--spacing-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background-color: var(--card);
+    box-shadow: var(--shadow);
+    padding: var(--spacing-3);
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    padding: var(--spacing-2) 0;
+    border-bottom: 1px solid var(--border);
+    white-space: normal;
+  }
+
+  .table td:last-child {
+    border-bottom: none;
+    padding-top: var(--spacing-3);
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--muted-foreground);
+    text-align: left;
+    margin-right: var(--spacing-4);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .actionsColumn {
+    justify-content: flex-end;
+  }
+
+  .actionsColumn::before {
+    content: "";
+    margin: 0;
+  }
+}

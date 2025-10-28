@@ -1,0 +1,92 @@
+.card {
+  background-color: var(--card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Reduce padding on mobile */
+@media (max-width: 767px) {
+  .card {
+    padding: var(--spacing-4);
+    border-radius: var(--radius);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--border);
+  margin-top: var(--spacing-2);
+}
+
+.editActions {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .form {
+    gap: var(--spacing-4);
+  }
+
+  .grid {
+    gap: var(--spacing-4);
+  }
+
+  .footer {
+    flex-direction: column;
+    padding-top: var(--spacing-4);
+  }
+
+  .editActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .editActions button {
+    width: 100%;
+    min-height: 2.75rem;
+  }
+
+  .footer > button {
+    width: 100%;
+    min-height: 2.75rem;
+  }
+}

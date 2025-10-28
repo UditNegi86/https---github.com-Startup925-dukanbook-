@@ -1,0 +1,130 @@
+.pageContainer {
+  padding: var(--spacing-8);
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  margin-top: var(--spacing-2);
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.quickFilters,
+.customFilters {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  flex-wrap: wrap;
+}
+
+.datePickerTrigger {
+  min-width: 240px;
+  justify-content: flex-start;
+}
+
+.mainContent {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  padding: 0;
+  overflow: hidden;
+}
+
+.mainContent :global(.tabsList) {
+  padding: var(--spacing-4) var(--spacing-6) 0;
+  border-bottom: 1px solid var(--border);
+  margin: 0;
+}
+
+.mainContent :global(.tabsContent) {
+  padding: var(--spacing-6);
+}
+
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.summaryCardSkeleton {
+  height: 120px;
+  border-radius: var(--radius-md);
+}
+
+.chartSkeleton {
+  height: 400px;
+  border-radius: var(--radius-md);
+}
+
+.tableSkeleton {
+  height: 300px;
+  border-radius: var(--radius-md);
+}
+
+.errorState {
+  padding: var(--spacing-12) var(--spacing-6);
+  text-align: center;
+  color: var(--error);
+  background-color: color-mix(in srgb, var(--error) 5%, transparent);
+  border-radius: var(--radius-md);
+}
+
+.errorState p {
+  margin: 0;
+}
+
+.errorState em {
+  color: color-mix(in srgb, var(--error) 80%, black);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: var(--spacing-4);
+  }
+
+  .filterContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

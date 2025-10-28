@@ -1,0 +1,350 @@
+.itemsSection {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: var(--spacing-4) 0;
+}
+
+.itemsHeader {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+/* Table Header */
+.itemTableHeader {
+  display: grid;
+  grid-template-columns: 1fr 6rem 8rem 8rem 2.5rem;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: var(--muted);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-3);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+
+.headerDescription {
+  grid-column: 1;
+}
+
+.headerQuantity {
+  grid-column: 2;
+  text-align: center;
+}
+
+.headerPrice {
+  grid-column: 3;
+  text-align: right;
+}
+
+.headerAmount {
+  grid-column: 4;
+  text-align: right;
+}
+
+.headerAction {
+  grid-column: 5;
+}
+
+/* Item Row */
+.itemRow {
+  display: grid;
+  grid-template-columns: 1fr 6rem 8rem 8rem 2.5rem;
+  gap: var(--spacing-2);
+  align-items: flex-start;
+  margin-bottom: var(--spacing-3);
+  padding: var(--spacing-2) 0;
+}
+
+.itemDescription {
+  grid-column: 1;
+}
+
+.descriptionWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.descriptionWrapper > div {
+  flex: 1;
+}
+
+.itemQuantity {
+  grid-column: 2;
+}
+
+.itemPrice {
+  grid-column: 3;
+}
+
+.itemAmount {
+  grid-column: 4;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 2.5rem;
+  padding: 0 var(--spacing-3);
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+  border-radius: var(--radius-sm);
+  margin-top: 1.75rem;
+}
+
+.itemAmountValue {
+  font-family: var(--font-family-monospace);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.itemRemoveButton {
+  grid-column: 5;
+  margin-top: 1.75rem;
+}
+
+.addItemButton {
+  align-self: flex-start;
+  margin-top: var(--spacing-2);
+}
+
+/* Hide labels on desktop, show on mobile */
+.fieldLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Autocomplete Suggestions */
+.suggestionsDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: var(--z-overlay);
+  margin-top: var(--spacing-1);
+  background-color: var(--popup);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  max-width: 32rem;
+}
+
+.suggestionsList {
+  max-height: 16rem;
+  overflow-y: auto;
+}
+
+.suggestionItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  width: 100%;
+  padding: var(--spacing-3);
+  text-align: left;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color var(--animation-duration-fast);
+  border-bottom: 1px solid var(--border);
+  color: var(--popup-foreground);
+}
+
+.suggestionItem:last-child {
+  border-bottom: none;
+}
+
+.suggestionItem:hover,
+.suggestionItemSelected {
+  background-color: var(--muted);
+}
+
+.suggestionName {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--popup-foreground);
+}
+
+.suggestionDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+}
+
+.suggestionStock {
+  font-family: var(--font-family-base);
+}
+
+.suggestionPrice {
+  font-family: var(--font-family-monospace);
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.suggestionFooter {
+  padding: var(--spacing-2) var(--spacing-3);
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+  background-color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+.highlight {
+  background-color: color-mix(in srgb, var(--primary) 20%, transparent);
+  color: var(--primary);
+  font-weight: 600;
+  padding: 0.0625rem 0;
+  border-radius: var(--radius-sm);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .itemsSection {
+    padding: var(--spacing-3) 0;
+  }
+
+  .itemsHeader {
+    font-size: 1rem;
+  }
+
+  /* Hide table header on mobile */
+  .itemTableHeader {
+    display: none;
+  }
+
+  /* Stack items vertically on mobile */
+  .itemRow {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto auto;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3);
+    background-color: var(--muted);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-3);
+  }
+
+  .itemDescription {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  /* Show labels in mobile view */
+  .fieldLabel {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0 0 var(--spacing-1) 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+
+  .itemQuantity {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .itemPrice {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .itemAmount {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin-top: 0;
+    justify-content: space-between;
+  }
+
+  .itemAmount::before {
+    content: "Amount: ";
+    font-weight: 500;
+    font-family: var(--font-family-base);
+    color: var(--muted-foreground);
+  }
+
+  .itemRemoveButton {
+    grid-column: 2;
+    grid-row: 2 / 4;
+    margin-top: 0;
+    justify-self: end;
+    align-self: center;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  .addItemButton {
+    width: 100%;
+    min-height: 2.75rem;
+  }
+
+  .suggestionsDropdown {
+    max-width: calc(100vw - var(--spacing-8));
+  }
+
+  .suggestionItem {
+    padding: var(--spacing-2);
+  }
+
+  .suggestionName {
+    font-size: 0.875rem;
+  }
+
+  .suggestionDetails {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .itemsSection {
+    padding: var(--spacing-2) 0;
+  }
+
+  .itemsHeader {
+    font-size: 0.9375rem;
+    margin-bottom: var(--spacing-3);
+  }
+
+  .itemRow {
+    padding: var(--spacing-2);
+    gap: var(--spacing-1);
+  }
+
+  .itemAmountValue {
+    font-size: 0.875rem;
+  }
+
+  .addItemButton {
+    font-size: 0.875rem;
+  }
+
+  .suggestionsDropdown {
+    max-width: calc(100vw - var(--spacing-6));
+  }
+}

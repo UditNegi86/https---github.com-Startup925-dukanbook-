@@ -1,0 +1,53 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+}
+
+.itemInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-3);
+  background-color: var(--muted);
+  border-radius: var(--radius);
+}
+
+.itemName {
+  font-weight: 600;
+}
+
+.itemPrice {
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.formField label {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.error {
+  color: var(--error);
+  font-size: 0.875rem;
+}
+
+.totalAmount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  margin-top: var(--spacing-4);
+}
+
+.totalAmount strong {
+  font-weight: 700;
+  color: var(--primary);
+}

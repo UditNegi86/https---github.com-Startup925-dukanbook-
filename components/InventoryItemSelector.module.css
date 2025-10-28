@@ -1,0 +1,86 @@
+.triggerButton {
+  color: var(--muted-foreground);
+}
+
+.triggerButton:hover {
+  color: var(--primary);
+}
+
+.popoverContent {
+  width: 20rem;
+  max-width: calc(100vw - var(--spacing-4));
+  padding: 0;
+  max-height: 24rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.popoverHeader {
+  padding: var(--spacing-3);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.popoverTitle {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--popup-foreground);
+}
+
+.searchInput {
+  font-size: 0.875rem;
+}
+
+.itemsList {
+  overflow-y: auto;
+  max-height: 18rem;
+  padding: var(--spacing-2);
+}
+
+.inventoryItem {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-3);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--animation-duration-fast);
+}
+
+.inventoryItem:hover {
+  background-color: var(--muted);
+}
+
+.inventoryItem:active {
+  background-color: color-mix(in srgb, var(--muted), var(--foreground) 5%);
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.itemName {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--popup-foreground);
+}
+
+.itemDetails {
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+  font-family: var(--font-family-monospace);
+}
+
+.noResults {
+  padding: var(--spacing-4);
+  text-align: center;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}

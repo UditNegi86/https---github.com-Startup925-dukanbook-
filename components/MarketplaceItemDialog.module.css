@@ -1,0 +1,55 @@
+.dialogContent {
+  max-width: 48rem;
+  width: 90vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formField label {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.error {
+  color: var(--error);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-1);
+}
+
+.fileInput {
+  padding: var(--spacing-1);
+}
+
+.imagePreview {
+  max-width: 150px;
+  max-height: 150px;
+  margin-top: var(--spacing-2);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

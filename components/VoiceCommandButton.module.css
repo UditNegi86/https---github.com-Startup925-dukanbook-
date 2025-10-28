@@ -1,0 +1,77 @@
+.voiceButton {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--border);
+  color: var(--muted-foreground);
+}
+
+.voiceButton:hover {
+  color: var(--foreground);
+  background-color: var(--muted);
+}
+
+.voiceButton.listening {
+  color: var(--error);
+  border-color: var(--error);
+  background-color: color-mix(in srgb, var(--error), white 90%);
+}
+
+.voiceButton.listening::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: var(--error);
+  animation: pulse 1.5s infinite;
+  z-index: 0;
+}
+
+.voiceButton.listening svg {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+.popoverContent {
+  width: 250px;
+  padding: var(--spacing-3);
+  background-color: var(--popup);
+  border: 1px solid var(--border);
+}
+
+.transcriptContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.listeningText {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.transcript {
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  min-height: 1.5rem; /* Prevents layout shift */
+}
+
+.errorText {
+  font-size: 0.875rem;
+  color: var(--error);
+}

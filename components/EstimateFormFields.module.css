@@ -1,0 +1,39 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+}
+
+.dateButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 400;
+  color: var(--foreground);
+}
+
+.dateButton > span {
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+  }
+
+  .dateButton {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: var(--spacing-2);
+  }
+
+  .dateButton {
+    font-size: 0.875rem;
+  }
+}

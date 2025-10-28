@@ -1,0 +1,203 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-8);
+  height: 4rem;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+  flex-shrink: 0;
+  gap: var(--spacing-6);
+}
+
+.logo {
+  font-family: var(--font-family-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  flex-grow: 1;
+}
+
+.navLink {
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  text-decoration: none;
+  transition: all var(--animation-duration-fast) ease;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: var(--foreground);
+  background-color: var(--muted);
+}
+
+.navLinkActive {
+  color: var(--primary);
+  background-color: var(--muted);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.subscriptionSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.businessName {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.subscribeButton {
+  white-space: nowrap;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 var(--spacing-4);
+    gap: var(--spacing-4);
+    height: auto;
+    min-height: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: var(--spacing-2);
+  }
+
+  .nav::-webkit-scrollbar {
+    height: 0.25rem;
+  }
+
+  .nav::-webkit-scrollbar-track {
+    background: var(--muted);
+  }
+
+  .nav::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: var(--radius-full);
+  }
+
+  .userInfo {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-3) var(--spacing-4);
+    gap: var(--spacing-3);
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nav {
+    gap: var(--spacing-1);
+  }
+
+  .navLink {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: 0.8125rem;
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .subscriptionSection {
+    gap: var(--spacing-1);
+  }
+
+  .businessName {
+    display: none;
+  }
+
+  .subscribeButton {
+    font-size: 0.8125rem;
+    padding: var(--spacing-1) var(--spacing-2);
+    min-height: 2.75rem;
+  }
+
+  .userInfo {
+    gap: var(--spacing-2);
+  }
+
+  .userInfo button {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: var(--spacing-2) var(--spacing-3);
+    gap: var(--spacing-2);
+  }
+
+  .logo {
+    font-size: 0.9375rem;
+  }
+
+  .nav {
+    gap: 0;
+    padding-bottom: var(--spacing-1);
+  }
+
+  .navLink {
+    padding: var(--spacing-2);
+    font-size: 0.75rem;
+    min-height: 2.75rem;
+  }
+
+  .subscriptionSection {
+    flex-direction: column;
+    gap: var(--spacing-1);
+  }
+
+  .subscribeButton {
+    font-size: 0.75rem;
+    padding: var(--spacing-1);
+    width: 100%;
+  }
+
+  .userInfo {
+    gap: var(--spacing-1);
+  }
+}

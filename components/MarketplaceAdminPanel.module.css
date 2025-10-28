@@ -1,0 +1,83 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.section {
+  background-color: var(--surface);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.table tbody tr:hover {
+  background-color: var(--muted);
+}
+
+.imageCell {
+  width: 40px;
+  height: 40px;
+}
+
+.imageCell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.actionsCell {
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+.errorState,
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-8) 0;
+  color: var(--muted-foreground);
+}
+
+.errorState {
+  color: var(--error);
+}

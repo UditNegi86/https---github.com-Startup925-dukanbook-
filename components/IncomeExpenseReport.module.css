@@ -1,0 +1,178 @@
+.reportContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.reportHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reportTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.dateRange {
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.card {
+  background-color: var(--background);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.card h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.card p {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.incomeCard p {
+  color: var(--success);
+}
+
+.expenseCard p {
+  color: var(--error);
+}
+
+.profitCard p {
+  color: var(--info);
+}
+
+.negativeProfit {
+  color: var(--error);
+}
+
+.chartSection {
+  margin-top: var(--spacing-6);
+}
+
+.chartSection h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-4);
+}
+
+.chartContainer {
+  height: 400px;
+  width: 100%;
+}
+
+.accordion {
+  margin-top: var(--spacing-6);
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  background-color: var(--muted);
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: var(--muted);
+}
+
+.amountHeader {
+  text-align: right;
+}
+
+.amountCell {
+  text-align: right;
+  font-weight: 500;
+  font-family: var(--font-family-monospace);
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* Print-specific styles */
+.printArea {
+  /* Styles for the content to be printed */
+}
+
+.printHeader {
+  display: none;
+}
+
+@media print {
+  .reportContainer {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+  .reportHeader {
+    display: none;
+  }
+  .dateRange {
+    display: none;
+  }
+  .printHeader {
+    display: block;
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+  }
+  .printHeader h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  .printHeader p {
+    font-size: 1rem;
+    color: #555;
+  }
+  .accordion :global(.accordion-trigger) {
+    /* In print, we want all sections expanded */
+    pointer-events: none;
+  }
+  .accordion :global(.accordion-content) {
+    display: block !important;
+    height: auto !important;
+    opacity: 1 !important;
+  }
+}

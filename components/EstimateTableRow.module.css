@@ -1,0 +1,78 @@
+.expandColumn {
+  width: 1%;
+  padding-right: 0 !important;
+}
+
+.expandButton {
+  transition: transform var(--animation-duration-fast) ease;
+}
+
+.expandButton.expanded {
+  transform: rotate(180deg);
+}
+
+.numberCell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.estimateNumber {
+  font-family: var(--font-family-monospace);
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.billNumber {
+  font-family: var(--font-family-monospace);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--secondary);
+  background-color: color-mix(in srgb, var(--secondary) 10%, transparent);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  width: fit-content;
+}
+
+.subuserBadge {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  background-color: var(--muted);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  width: fit-content;
+}
+
+.amountColumn {
+  text-align: right;
+  font-family: var(--font-family-monospace);
+}
+
+.actionsColumn {
+  text-align: right;
+  width: 1%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.paymentMenuItem {
+  color: var(--success) !important;
+}
+.paymentMenuItem:hover,
+.paymentMenuItem:focus-visible {
+  background-color: color-mix(in srgb, var(--success) 15%, transparent) !important;
+}
+
+.deleteMenuItem {
+  color: var(--error) !important;
+}
+.deleteMenuItem:hover,
+.deleteMenuItem:focus-visible {
+  background-color: color-mix(in srgb, var(--error) 15%, transparent) !important;
+}

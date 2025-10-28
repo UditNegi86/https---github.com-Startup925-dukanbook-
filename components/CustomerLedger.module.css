@@ -1,0 +1,347 @@
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.table th {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--background);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.customerRow:hover {
+  background-color: var(--muted);
+}
+
+.customerInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.customerName {
+  font-weight: 500;
+  color: var(--surface-foreground);
+}
+
+.customerMobile {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  font-family: var(--font-family-monospace);
+}
+
+.totalAmount {
+  font-weight: 500;
+  font-family: var(--font-family-monospace);
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+.rightAlign {
+  text-align: right;
+}
+
+.actionsColumn {
+  text-align: right;
+  width: 1%;
+}
+
+.expandColumn {
+  width: 1%;
+  padding-right: 0 !important;
+}
+
+.expandButton {
+  transition: transform var(--animation-duration-fast) ease;
+}
+
+.expandButton.expanded {
+  transform: rotate(180deg);
+}
+
+.emptyState {
+  padding: var(--spacing-12) var(--spacing-6);
+  text-align: center;
+  color: var(--muted-foreground);
+}
+
+.emptyState h3 {
+  margin: 0 0 var(--spacing-2);
+  font-size: 1.25rem;
+  color: var(--foreground);
+}
+
+.emptyState p {
+  margin: 0;
+}
+
+/* Expanded row styles */
+.expandedRow {
+  background-color: var(--background);
+}
+
+.expandedRow:hover {
+  background-color: var(--background);
+}
+
+.expandedRow td {
+  padding: 0 !important;
+  border-bottom: 1px solid var(--border);
+}
+
+.estimatesBreakdown {
+  padding: var(--spacing-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.breakdownTitle {
+  margin: 0 0 var(--spacing-2);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0 var(--spacing-2);
+}
+
+.estimateCard {
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.estimateHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.estimateDetail {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.estimateDetailAmount {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-weight: 500;
+  color: var(--surface-foreground);
+  margin-left: auto;
+  font-family: var(--font-family-monospace);
+}
+
+.paymentStatus {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  align-items: flex-start;
+}
+
+.paymentDetails {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.itemsTableContainer {
+  padding: var(--spacing-2);
+}
+
+.itemsTable {
+  width: 100%;
+  font-size: 0.875rem;
+}
+
+.itemsTable td {
+  padding: var(--spacing-2) var(--spacing-3);
+  border-bottom: none;
+}
+
+.itemsTable tfoot tr:first-child td {
+  border-top: 2px solid var(--border);
+  padding-top: var(--spacing-3);
+}
+
+.itemsTable tfoot td {
+  padding-top: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
+}
+
+.discountAmount {
+  color: var(--error);
+}
+
+.taxAmount {
+  color: var(--success);
+}
+
+.totalRow td {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding-top: var(--spacing-3) !important;
+  padding-bottom: var(--spacing-3) !important;
+  border-top: 2px solid var(--border) !important;
+}
+
+.totalLabel {
+  text-align: left;
+  color: var(--muted-foreground);
+}
+
+/* Mobile responsive - card layout */
+@media (max-width: 767px) {
+  .tableContainer {
+    overflow-x: visible;
+  }
+
+  .table {
+    display: block;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody {
+    display: block;
+  }
+
+  .table tr {
+    display: block;
+    margin-bottom: var(--spacing-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background-color: var(--card);
+    box-shadow: var(--shadow);
+  }
+
+  .customerRow {
+    padding: var(--spacing-3);
+  }
+
+  .table td {
+    display: block;
+    padding: var(--spacing-2) var(--spacing-3);
+    border-bottom: none;
+    text-align: left;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--muted-foreground);
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-1);
+  }
+
+  .expandColumn {
+    padding: var(--spacing-2) !important;
+  }
+
+  .expandColumn::before {
+    display: none;
+  }
+
+  .actionsColumn {
+    text-align: left;
+    padding-top: var(--spacing-3) !important;
+    border-top: 1px solid var(--border);
+    margin-top: var(--spacing-2);
+  }
+
+  .actionsColumn::before {
+    content: "Actions";
+  }
+
+  .centerAlign,
+  .rightAlign {
+    text-align: left;
+  }
+
+  .customerInfo {
+    gap: var(--spacing-1);
+  }
+
+  .expandButton {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  .estimatesBreakdown {
+    padding: var(--spacing-3);
+  }
+
+  .estimateCard {
+    margin-bottom: var(--spacing-3);
+  }
+
+  .estimateHeader {
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+  }
+
+  .estimateDetailAmount {
+    margin-left: 0;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .paymentStatus {
+    align-items: flex-start;
+  }
+
+  .itemsTableContainer {
+    padding: var(--spacing-2);
+  }
+
+  .itemsTable td {
+    padding: var(--spacing-2);
+    font-size: 0.8125rem;
+  }
+
+  .emptyState {
+    padding: var(--spacing-8) var(--spacing-4);
+  }
+}
+
+/* Touch target improvements */
+@media (max-width: 767px) {
+  .table button {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+}

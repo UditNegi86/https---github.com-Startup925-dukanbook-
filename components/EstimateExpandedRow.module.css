@@ -1,0 +1,211 @@
+.expandedRow {
+  background-color: var(--muted);
+}
+
+.expandedRow td {
+  padding: 0 !important;
+  border-bottom: 1px solid var(--border);
+}
+
+.expandedRow:hover {
+  background-color: var(--muted);
+}
+
+.itemsBreakdown {
+  padding: var(--spacing-4) var(--spacing-6);
+}
+
+.breakdownTitle {
+  margin: 0 0 var(--spacing-3);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.itemsTable th,
+.itemsTable td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.itemsTable thead {
+  background-color: var(--background);
+}
+
+.itemsTable th {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.itemsTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.itemsTable tfoot tr:first-child td {
+  border-top: 2px solid var(--border);
+}
+
+.itemsTable tfoot td {
+  border-bottom: none;
+  background-color: var(--background);
+  padding-top: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
+}
+
+.discountAmount {
+  color: var(--error);
+}
+
+.taxAmount {
+  color: var(--success);
+}
+
+.totalRow td {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding-top: var(--spacing-3) !important;
+  padding-bottom: var(--spacing-3) !important;
+  border-top: 2px solid var(--border) !important;
+}
+
+.paymentStatusRow {
+  padding-top: var(--spacing-3) !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+.paymentStatusMessage {
+  font-size: 0.875rem;
+  color: var(--foreground);
+}
+
+.paymentHistoryHeader {
+  padding-top: var(--spacing-4) !important;
+  padding-bottom: var(--spacing-2) !important;
+  border-top: 2px solid var(--border) !important;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.paymentHistoryRow {
+  background-color: color-mix(in srgb, var(--muted) 50%, transparent);
+}
+
+.paymentHistoryRow td {
+  padding-top: var(--spacing-2) !important;
+  padding-bottom: var(--spacing-2) !important;
+  border-bottom: none !important;
+}
+
+.paymentHistoryDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+  align-items: center;
+}
+
+.paymentDate {
+  font-family: var(--font-family-monospace);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.paymentMode {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  text-transform: capitalize;
+  background-color: var(--background);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+}
+
+.paymentNotes {
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+
+.paymentAmount {
+  color: var(--success);
+  font-weight: 500;
+}
+
+.paymentSummaryRow td {
+  padding-top: var(--spacing-2) !important;
+  padding-bottom: var(--spacing-2) !important;
+  font-weight: 500;
+  border-bottom: none !important;
+}
+
+.totalPaidAmount {
+  color: var(--success);
+}
+
+.remainingBalanceAmount {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+.numberColumn {
+  text-align: right;
+  font-family: var(--font-family-monospace);
+  white-space: nowrap;
+}
+
+.calculation {
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+}
+
+.totalLabel {
+  text-align: right;
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 768px) {
+  .itemsBreakdown {
+    padding: var(--spacing-3);
+  }
+
+  .itemsTable {
+    font-size: 0.8125rem;
+  }
+
+  .itemsTable th,
+  .itemsTable td {
+    padding: var(--spacing-2);
+  }
+
+  .breakdownTitle {
+    font-size: 0.8125rem;
+  }
+
+  .numberColumn {
+    font-size: 0.8125rem;
+  }
+
+  .calculation {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .itemsBreakdown {
+    padding: var(--spacing-2);
+  }
+}

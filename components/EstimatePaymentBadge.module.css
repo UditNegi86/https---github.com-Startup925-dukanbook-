@@ -1,0 +1,50 @@
+.paymentStatus {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.paymentDetails {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+.daysRemaining {
+  font-weight: 400;
+}
+
+/* Credit payment due date color coding */
+.dueSoon {
+  background-color: color-mix(in srgb, hsl(45 100% 50%) 15%, transparent) !important;
+  color: hsl(45 80% 30%) !important;
+  border-color: color-mix(in srgb, hsl(45 100% 50%) 30%, transparent) !important;
+}
+
+.dueUrgent {
+  background-color: color-mix(in srgb, hsl(330 80% 60%) 15%, transparent) !important;
+  color: hsl(330 70% 40%) !important;
+  border-color: color-mix(in srgb, hsl(330 80% 60%) 30%, transparent) !important;
+}
+
+.dueVeryUrgent {
+  background-color: color-mix(in srgb, var(--error) 15%, transparent) !important;
+  color: var(--error) !important;
+  border-color: color-mix(in srgb, var(--error) 30%, transparent) !important;
+}
+
+.duePastDue {
+  background-color: color-mix(in srgb, hsl(0 0% 20%) 15%, transparent) !important;
+  color: hsl(0 0% 10%) !important;
+  border-color: color-mix(in srgb, hsl(0 0% 20%) 30%, transparent) !important;
+}
+
+.dark .duePastDue {
+  background-color: color-mix(in srgb, hsl(0 0% 80%) 20%, transparent) !important;
+  color: hsl(0 0% 90%) !important;
+  border-color: color-mix(in srgb, hsl(0 0% 80%) 40%, transparent) !important;
+}
+
+.dueDefault {
+  /* Keeps the default warning variant styling */
+}

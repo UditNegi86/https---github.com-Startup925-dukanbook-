@@ -1,0 +1,20 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+/* Mobile responsive - full screen dialog and stacked fields */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+}
+
+/* Full-screen on small mobile */
+@media (max-width: 479px) {
+  .grid {
+    gap: var(--spacing-3);
+  }
+}

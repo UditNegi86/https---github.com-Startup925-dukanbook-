@@ -1,0 +1,305 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.searchInputWrapper {
+  position: relative;
+  flex-grow: 1;
+  min-width: 250px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+
+.searchInput {
+  padding-left: calc(var(--spacing-3) * 2 + 18px);
+  width: 100%;
+}
+
+.userFilter {
+  min-width: 200px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: block;
+}
+
+.table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.table th {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: color-mix(in srgb, var(--background) 95%, var(--primary) 5%);
+}
+
+.paymentType {
+  text-transform: capitalize;
+}
+
+.statusBadge {
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 0.75rem;
+}
+
+.statusBadge.completed {
+  background-color: color-mix(in srgb, var(--success) 15%, transparent);
+  color: var(--success);
+}
+
+.statusBadge.draft {
+  background-color: color-mix(in srgb, var(--warning) 20%, transparent);
+  color: var(--warning);
+}
+
+.skeletonContainer,
+.errorState,
+.emptyState {
+  padding: var(--spacing-8);
+  text-align: center;
+}
+
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.errorState {
+  color: var(--error);
+  background-color: color-mix(in srgb, var(--error) 5%, transparent);
+  border-radius: var(--radius);
+}
+
+.emptyState {
+  color: var(--muted-foreground);
+}
+
+/* Mobile Cards View - Hidden on desktop */
+.cardsContainer {
+  display: none;
+}
+
+/* Mobile responsive - card layout */
+@media (max-width: 767px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-3);
+  }
+
+  .searchInputWrapper {
+    min-width: 0;
+  }
+
+  .userFilter {
+    min-width: 0;
+  }
+
+  /* Hide table on mobile */
+  .tableWrapper {
+    display: none;
+  }
+
+  /* Show cards on mobile */
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .estimateCard {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+
+  /* Card Header */
+  .cardHeader {
+    background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+    padding: var(--spacing-4);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cardHeaderContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-2);
+    gap: var(--spacing-3);
+  }
+
+  .estimateNumber {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .customerName {
+    font-size: 0.9375rem;
+    color: var(--muted-foreground);
+    font-weight: 500;
+    margin-bottom: var(--spacing-2);
+  }
+
+  .dateInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+
+  .dateInfo svg {
+    flex-shrink: 0;
+  }
+
+  /* Card Sections */
+  .cardSection {
+    padding: var(--spacing-4);
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+  }
+
+  .cardSection:last-of-type {
+    border-bottom: none;
+  }
+
+  .sectionTitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-foreground);
+    margin-bottom: var(--spacing-3);
+  }
+
+  .infoRow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: 0.9375rem;
+    color: var(--foreground);
+  }
+
+  .infoRow .icon {
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+
+  /* Payment Section */
+  .paymentBadge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+  }
+
+  .paymentBadge svg {
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+
+  .paymentTypeBadge {
+    font-size: 0.875rem;
+    text-transform: capitalize;
+  }
+
+  /* Amount Section */
+  .amountSection {
+    background-color: color-mix(in srgb, var(--success) 8%, transparent);
+    padding: var(--spacing-4);
+    border-radius: var(--radius);
+    border: 1px solid color-mix(in srgb, var(--success) 20%, transparent);
+  }
+
+  .amountLabel {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-foreground);
+    margin-bottom: var(--spacing-2);
+  }
+
+  .amountIcon {
+    color: var(--success);
+    flex-shrink: 0;
+  }
+
+  .amountValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--success);
+    line-height: 1.2;
+  }
+
+  .skeletonContainer,
+  .errorState,
+  .emptyState {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+}
+
+/* Tablet and up - keep table view */
+@media (min-width: 768px) {
+  .cardsContainer {
+    display: none;
+  }
+
+  .tableWrapper {
+    display: block;
+  }
+}

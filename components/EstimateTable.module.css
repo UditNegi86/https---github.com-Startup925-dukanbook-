@@ -1,0 +1,198 @@
+.tableContainer {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.table th {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: var(--muted);
+}
+
+.amountColumn {
+  text-align: right;
+  font-family: var(--font-family-monospace);
+}
+
+.actionsColumn {
+  text-align: right;
+  width: 1%;
+}
+
+.expandColumn {
+  width: 1%;
+  padding-right: 0 !important;
+}
+
+.emptyState {
+  padding: var(--spacing-12) var(--spacing-6);
+  text-align: center;
+  color: var(--muted-foreground);
+}
+
+.emptyState h3 {
+  margin: 0 0 var(--spacing-2);
+  font-size: 1.25rem;
+  color: var(--foreground);
+}
+
+.emptyState p {
+  margin: 0;
+}
+
+/* Card-based layout for mobile */
+@media (max-width: 768px) {
+  .tableContainer {
+    overflow: visible;
+  }
+
+  .table {
+    display: block;
+    min-width: auto;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody {
+    display: block;
+  }
+
+  .table tbody tr {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto auto auto auto;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3);
+    margin-bottom: var(--spacing-3);
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .table tbody tr td {
+    display: block;
+    padding: 0;
+    border: none;
+    text-align: left;
+  }
+
+  /* Expand button - row 1, col 1 */
+  .table tbody tr td:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .expandColumn {
+    padding: 0 !important;
+    width: auto;
+  }
+
+  /* Estimate/Bill number - row 1, col 2 */
+  .table tbody tr td:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* Actions - row 1, col 3 */
+  .table tbody tr td:nth-child(8) {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+  }
+
+  /* Date - row 2, spans all columns */
+  .table tbody tr td:nth-child(3) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+
+  .table tbody tr td:nth-child(3)::before {
+    content: "Date: ";
+    font-weight: 500;
+  }
+
+  /* Customer - row 3, spans all columns */
+  .table tbody tr td:nth-child(4) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    font-weight: 500;
+  }
+
+  /* Mobile - row 4, spans all columns */
+  .table tbody tr td:nth-child(5) {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-family-monospace);
+  }
+
+  .table tbody tr td:nth-child(5)::before {
+    content: "📱 ";
+  }
+
+  /* Amount and Payment - row 5, two columns */
+  .table tbody tr td:nth-child(6) {
+    grid-column: 1 / 2;
+    grid-row: 5;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .table tbody tr td:nth-child(7) {
+    grid-column: 2 / -1;
+    grid-row: 5;
+    justify-self: end;
+  }
+
+  .amountColumn {
+    text-align: left;
+  }
+
+  .actionsColumn {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .table tbody tr {
+    padding: var(--spacing-2);
+    gap: var(--spacing-1);
+  }
+
+  .table tbody tr td:nth-child(6) {
+    font-size: 1rem;
+  }
+}

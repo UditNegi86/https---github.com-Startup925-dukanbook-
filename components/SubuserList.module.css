@@ -1,0 +1,130 @@
+.container {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--surface-foreground);
+}
+
+.content {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  font-size: 0.9375rem;
+  color: var(--surface-foreground);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: var(--muted);
+}
+
+.actionsHeader {
+  text-align: right;
+}
+
+.actionsCell {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-2);
+}
+
+.deleteButton {
+  color: var(--error);
+}
+
+.deleteButton:hover {
+  background-color: color-mix(in srgb, var(--error) 10%, transparent);
+  color: var(--error);
+}
+
+.centeredMessage {
+  text-align: center;
+  padding: var(--spacing-12) var(--spacing-4);
+  color: var(--muted-foreground);
+}
+
+.centeredMessage h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--surface-foreground);
+  margin-top: var(--spacing-4);
+  margin-bottom: var(--spacing-2);
+}
+
+.emptyIcon,
+.errorIcon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+  color: var(--muted-foreground);
+}
+
+.errorIcon {
+  color: var(--warning);
+}
+
+.errorMessage {
+  font-family: var(--font-family-monospace);
+  font-size: 0.875rem;
+  color: var(--warning-foreground);
+  background-color: color-mix(in srgb, var(--warning) 15%, transparent);
+  padding: var(--spacing-2);
+  border-radius: var(--radius);
+  margin-top: var(--spacing-4);
+  display: inline-block;
+}
+
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+}
+
+.skeletonRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+}

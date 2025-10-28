@@ -1,0 +1,324 @@
+.tableContainer {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.table th {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: var(--muted);
+}
+
+.amountColumn {
+  text-align: right;
+  font-family: var(--font-family-monospace);
+}
+
+.actionsColumn {
+  text-align: right;
+  width: 1%;
+}
+
+.expandColumn {
+  width: 1%;
+  padding-right: 0 !important;
+}
+
+.expandButton {
+  transition: transform var(--animation-duration-fast) ease;
+}
+
+.expandButton.expanded {
+  transform: rotate(180deg);
+}
+
+.deleteMenuItem {
+  color: var(--error) !important;
+}
+.deleteMenuItem:hover,
+.deleteMenuItem:focus-visible {
+  background-color: color-mix(in srgb, var(--error) 15%, transparent) !important;
+}
+
+.emptyState {
+  padding: var(--spacing-12) var(--spacing-6);
+  text-align: center;
+  color: var(--muted-foreground);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--surface);
+}
+
+.emptyIcon {
+  margin-bottom: var(--spacing-4);
+  color: var(--muted-foreground);
+}
+
+.emptyState h3 {
+  margin: 0 0 var(--spacing-2);
+  font-size: 1.25rem;
+  color: var(--foreground);
+}
+
+.emptyState p {
+  margin: 0;
+}
+
+/* Expanded row styles */
+.expandedRow {
+  background-color: var(--muted);
+}
+
+.expandedRow td {
+  padding: 0 !important;
+  border-bottom: 1px solid var(--border);
+}
+
+.expandedRow:hover {
+  background-color: var(--muted);
+}
+
+.itemsBreakdown {
+  padding: var(--spacing-4) var(--spacing-6);
+}
+
+.breakdownTitle {
+  margin: 0 0 var(--spacing-3);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.itemsTable th,
+.itemsTable td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.itemsTable thead {
+  background-color: var(--background);
+}
+
+.itemsTable th {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.itemsTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.numberColumn {
+  text-align: right;
+  font-family: var(--font-family-monospace);
+  white-space: nowrap;
+}
+
+.notesSection {
+    margin-top: var(--spacing-4);
+    padding: var(--spacing-3);
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    font-size: 0.875rem;
+}
+
+.notesSection strong {
+    display: block;
+    margin-bottom: var(--spacing-2);
+    color: var(--muted-foreground);
+}
+
+.notesSection p {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.paymentDetailsSection {
+    margin-top: var(--spacing-4);
+    padding: var(--spacing-3);
+    background-color: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    font-size: 0.875rem;
+}
+
+.paymentDetailsSection > strong {
+    display: block;
+    margin-bottom: var(--spacing-3);
+    color: var(--muted-foreground);
+}
+
+.paymentDetailsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.paymentDetail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.paymentDetailLabel {
+    color: var(--muted-foreground);
+    font-weight: 500;
+}
+
+.paymentDetailValue {
+    color: var(--foreground);
+    font-weight: 600;
+}
+
+/* Card-based layout for mobile */
+@media (max-width: 768px) {
+  .tableContainer {
+    overflow: visible;
+  }
+
+  .table {
+    display: block;
+    min-width: auto;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody {
+    display: block;
+  }
+
+  .table tbody tr {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--spacing-2) var(--spacing-3);
+    padding: var(--spacing-3);
+    margin-bottom: var(--spacing-3);
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .table tbody tr td {
+    display: block;
+    padding: 0;
+    border: none;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .table tbody tr td::before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: var(--muted-foreground);
+    display: block;
+    margin-bottom: var(--spacing-1);
+    font-size: 0.75rem;
+  }
+
+  .expandColumn {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0 !important;
+    width: auto;
+  }
+  .expandColumn::before { display: none; }
+
+  /* Supplier Name */
+  .table tbody tr td:nth-child(4) {
+    grid-column: 2;
+    grid-row: 1;
+    font-weight: 600;
+  }
+  .table tbody tr td:nth-child(4)::before { display: none; }
+
+  /* Actions */
+  .table tbody tr td:nth-child(7) {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+  .table tbody tr td:nth-child(7)::before { display: none; }
+
+  /* Date */
+  .table tbody tr td:nth-child(2) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  /* Bill # */
+  .table tbody tr td:nth-child(3) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
+  /* Amount */
+  .table tbody tr td:nth-child(5) {
+    grid-column: 1 / 2;
+    grid-row: 4;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  .table tbody tr td:nth-child(5)::before { display: none; }
+  .amountColumn { text-align: left; }
+
+  /* Status */
+  .table tbody tr td:nth-child(6) {
+    grid-column: 2 / -1;
+    grid-row: 4;
+    justify-self: end;
+    align-self: center;
+  }
+  .table tbody tr td:nth-child(6)::before { display: none; }
+
+  .expandedRow td {
+    display: block !important;
+    grid-column: 1 / -1 !important;
+    padding: 0 !important;
+  }
+}
